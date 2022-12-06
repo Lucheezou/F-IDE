@@ -93,7 +93,7 @@ let isLogged = (req,res,next) =>
 
 
 app.get('/', (req,res) => {res.redirect('/index')})
-app.get('/index', (req, res) => {res.redirect('http://127.0.0.1:5173')})
+app.get('/index', (req, res) => {res.redirect('https://francissoft.onrender.com')})
 app.get('/ide', isAuth, (req,res) => {res.sendFile(__dirname + '/views/ide.html')})
 app.post('/ide', (req,res) => {
   let output;

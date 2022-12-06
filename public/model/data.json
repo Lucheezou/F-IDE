@@ -55,6 +55,123 @@
 
 
 
-    { "input":"How to add a string to another string", "output":["The strcat() function in C++ appends a copy of a string to the end of another string. strcat() prototype char* strcat( char* dest, const char* src ); The strcat() function takes two arguments: dest and src. This function appends a copy of the character string pointed to by src to the end of string pointed to by dest. The null terminating character at the end of dest is replaced by the first character of src and the resulting character is also null terminated. The behaviour is undefined if - the strings overlap. - the dest array is not large enough to append the contents of src. It is defined in <cstring> header file. Example: #include <cstring> #include <iostream> using namespace std; int main() { char dest[50] = \"Learning C++ is fun\"; char src[50] = \" and easy\"; strcat(dest, src); cout << dest ; return 0; } "] }
+    { "input":"How to add a string to another string", "output":["The strcat() function in C++ appends a copy of a string to the end of another string. strcat() prototype char* strcat( char* dest, const char* src ); The strcat() function takes two arguments: dest and src. This function appends a copy of the character string pointed to by src to the end of string pointed to by dest. The null terminating character at the end of dest is replaced by the first character of src and the resulting character is also null terminated. The behaviour is undefined if - the strings overlap. - the dest array is not large enough to append the contents of src. It is defined in <cstring> header file. Example: #include <cstring> #include <iostream> using namespace std; int main() { char dest[50] = \"Learning C++ is fun\"; char src[50] = \" and easy\"; strcat(dest, src); cout << dest ; return 0; } "] },
+
+    { "input": "How to print a string", "output": [ "The printf() function in C++ is used to write a formatted string to the standard output (stdout). It is defined in the cstdio header file. Example: #include <cstdio> int main() { int age = 23; // print a string literal printf(\"My age is \"); // print an int variable printf(\"%d\", age); return 0; } "] },
+
+
+
+
+
+    
+    { "input": "How to read the data?", "output": ["The scanf() function in C++ is used to read the data from the standard input (stdin). The read data is stored in the respective variables.It is defined in the cstdio header file. Example: #include <cstdio> #include <iostream> using namespace std; int main() { int age; cout << \"Enter your age: \"; // get age from user scanf(\"%d\", &age); // print age cout << \"Age = \" << age; return 0; } "] },
+    
+    
+
+
+
+
+    { "input": "How to open a file?", "output":["The fopen() function in C++ opens a specified file in a certain mode. Example: #include <cstdio> #include <cstring> using namespace std; int main() { int c; FILE *fp; fp = fopen(\"file.txt", "w\"); char str[20] = \"Hello World!\"; if (fp) { for(int i=0; i<strlen(str); i++) putc(str[i],fp); } fclose(fp); } "] },
+
+
+
+
+
+
+    { "input": "How to close a file stream?", "output": ["The fclose() function takes a single argument, a file stream which is to be closed. All the data that are buffered but not written are flushed to the OS and all unread buffered data are discarded.Even if the operation fails, the stream is no longer associated with the file. If the file pointer is used after fclose() is executed, the behaviour is undefined.It is defined in <cstdio> header file. Example: #include <iostream> #include <cstdio> using namespace std; int main() { FILE *fp; fp = fopen(\"file.txt","w\"); char str[20] = \"Hello World!\"; if (fp == NULL) { cout << \"Error opening file\"; exit(1); } fprintf(fp,\"%s\",str); fclose(fp); cout << \"File closed successfully\"; return 0; } "] },
+
+
+
+
+
+
+    { "input": "How to write a string except the terminating NULL character?", "output": ["The fputs() function in C++ writes a string completely except the terminating null character to the given output file stream.It is same as executing fputc() repeatedly. Example: #include <cstdio> int main() { char str[] = \"Learning to program\"; FILE *fp; fp = fopen(\"file.txt","w\"); if (fp) fputs(str,fp); else perror(\"File opening failed\"); fclose(fp); return 0; } "] },
+
+
+
+
+
+
+    { "input": "How to get character?", "output":["The getchar() function in C++ reads the next character from stdin. Example: #include <iostream> #include <cstdio> using namespace std; int main() { int c,i=0; char str[100]; cout << \"Enter characters, Press Enter to stop\n\"; do { c = getchar(); str[i] = c; i++; } while(c!='\n'); cout << str; return 0; } "] },
+
+
+
+
+
+
+    { "input": "How to read specified number of characters from an input stream?", "output":["The fread() function in C++ reads a specified number of characters from the given input stream. Example: #include <iostream> #include <cstdio> using namespace std; int main() { FILE *fp; char buffer[100]; fp = fopen(\"data.txt","rb\"); while(!feof(fp)) { fread(buffer,sizeof(buffer),1,fp); cout << buffer; } return 0; } "] },
+
+
+
+
+
+
+    { "input":" How to write specified number of characters in an input stream?", "output": ["The fwrite() function in C++ writes a specified number of characters to the given output stream. Example: #include <iostream> #include <cstdio> using namespace std; int main() { int retVal; FILE *fp; char buffer[] = \"Writing to a file using fwrite.\"; fp = fopen(\"data.txt","w\"); retVal = fwrite(buffer,sizeof(buffer),1,fp); cout << \"fwrite returned \" << retVal; return 0; } "] },
+
+
+    { "input":"How to add a string to another string", "output":["The strcat() function in C++ appends a copy of a string to the end of another string. strcat() prototype char* strcat( char* dest, const char* src ); The strcat() function takes two arguments: dest and src. This function appends a copy of the character string pointed to by src to the end of string pointed to by dest. The null terminating character at the end of dest is replaced by the first character of src and the resulting character is also null terminated. The behaviour is undefined if - the strings overlap. - the dest array is not large enough to append the contents of src. It is defined in <cstring> header file. Example: #include <cstring> #include <iostream> using namespace std; int main() { char dest[50] = \"Learning C++ is fun\"; char src[50] = \" and easy\"; strcat(dest, src); cout << dest ; return 0; } "] },
+
+
+
+
+
+    { "input":"How to accept input", "output":["The cin() object is used to accept input from the standard input device i.e. keyboard. It is defined in the iostream header file. Example: #include <iostream> using namespace std; int main() { int num; cout << \"Enter a number: \"; // take integer input cin >> num; cout << \"You entered: \" << num; return 0; } "] },
+
+
+
+
+
+    { "input":"How to display output", "output":["The cout() object is used to display the output to the standard output device. It is defined in the iostream header file. Example: #include <iostream> using namespace std; int main() { int a = 24; // print variable cout << \"Value of a is \" << a; return 0; } "] },
+
+
+
+
+
+    { "input":"How to copy characters from source to destination", "output":["The strncpy() function in C++ copies a specified bytes of characters from source to destination. Example: #include <cstring> #include <iostream> using namespace std; int main() { char src[] = \"It's Monday and it's raining\"; char dest[40]; /* count less than length of src */ strncpy(dest,src,10); cout << dest << endl; /* count more than length of src */ strncpy(dest,src,strlen(src)+10); cout << dest << endl; return 0; } "] },
+
+
+
+
+
+    { "input":"How to compare C-strings or null terminating strings", "output":["The strcmp() function in C++ compares two null-terminating strings (C-strings). The comparison is done lexicographically. It is defined in the cstring header file. Example: #include <cstring> #include <iostream> using namespace std; int main() { char src[] = \"It's Monday and it's raining\"; char dest[40]; /* count less than length of src */ strncpy(dest,src,10); cout << dest << endl; /* count more than length of src */ strncpy(dest,src,strlen(src)+10); cout << dest << endl; return 0; } "] },
+
+
+
+
+
+    { "input":"Return a length of a C string", "output":["The strlen() function in C++ returns the length of the given C-string. It is defined in the cstring header file. Example: #include <iostream> #include <cstring> using namespace std; int main() { // initialize C-string char song[] = \"We Will Rock You!\"; // print the length of the song string cout << strlen(song); return 0; } "] },
+
+
+
+
+
+    { "input":"How to check if its a letter in the alphabet", "output":["The isalpha() function in C++ checks if the given character is an alphabet or not. It is defined in the cctype header file. Example: #include <iostream> #include <cctype> using namespace std; int main() { // check if '27' is an alphabet int result = isalpha('27'); cout << result; return 0; } "] },
+
+
+
+
+
+    { "input":"How to check if input is a digit", "output":["The isdigit() function in C++ checks if the given character is a digit or not. It is defined in the cctype header file. Example: #include <iostream> using namespace std; int main() { // checks if '9' is a digit cout << isdigit('9'); return 0; } "] },
+
+
+
+
+
+    { "input":"How to check blank characters", "output":["The isblank() function checks if ch is a blank character or not as classified by the currently installed C locale. By default, space and horizontal tab are considered as blank characters. Example: #include <cctype> #include <iostream> #include <cstring> using namespace std; int main() { char str[] = \"Hello, I am here.\"; int count = 0; for (int i=0; i<=strlen(str); i++) { if (isblank(str[i])) count ++; } cout << \"Number of blank characters: \" << count << endl; return 0; } "] },
+
+
+
+
+
+    { "input":"How to make make a big char into a small char", "output":["The tolower() function in C++ converts a given character to lowercase. It is defined in the cctype header file. Example: #include <iostream> #include <cctype> using namespace std; int main() { // convert 'A' to lowercase char ch = tolower('A'); cout << ch; return 0; } "] },
+
+
+
+
+
+    { "input":"How to make make a small char into a big char", "output":["The toupper() function in C++ converts a given character to uppercase. It is defined in the cctype header file. Example: #include <iostream> #include <cctype> using namespace std; int main() { // convert 'a' to uppercase char ch = toupper('a'); cout << ch; return 0; } "] }
+
+
+
 
 ]
