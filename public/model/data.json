@@ -1,0 +1,60 @@
+[
+
+    { "input":"How to round number", "output":["The round() function in C++ returns the integral value that is nearest to the argument, with halfway cases rounded away from zero. It is defined in the cmath header file. Example: #include <iostream> using namespace std; int main() { int num; cout << \"Enter a number: \"; // take integer input cin >> num; cout << \"You entered: \" << num; return 0; } "] },
+
+
+
+
+
+    
+    { "input":"How to raise a number to a power", "output":["The exp() function in C++ returns the exponential (Euler's number) e raised to the given argument. This function is defined in <cmath> header file. Example: #include <iostream> #include <cmath> using namespace std; int main() { long int x = 13; double result; result = exp(x); cout << \"exp(x) = \" << result << endl; return 0; } "] },
+    
+    
+
+
+
+
+    { "input":"How to get the square root of a number", "output":["The sqrt() function in C++ returns the square root of a number. This function is defined in the cmath header file. Example: #include <iostream> #include <cmath> using namespace std; int main() { cout << \"Square root of 25 = \"; // print the square root of 25 cout << sqrt(25); return 0; } "] },
+
+
+
+
+
+    { "input":"How to convert string to integer", "output":["The atol() function in C++ interprets the contents of a string and returns its corresponding integer value. It is defined in <cstdlib> header file. Example: #include <iostream> #include <cstdlib> using namespace std; int main() { char s[] = \"-114\"; double number; cout <<\"Number in String = \" << s << endl; number = atol(s); cout << \"Number in Long Int = \" << number; return 0; } "] },
+
+
+
+
+
+    { "input":"How to convert string float number to double", "output":["The strtod() function in C++ interprets the contents of a string as a floating point number and return its value as a double. This function also sets a pointer to point to the first character after the last valid character of the string if there is any, otherwise the pointer is set to null. For base 10 and the string \"12abc\" Valid numeric part -> 12 First character after valid numeric part -> a It is defined in <cstdlib> header file. Example: #include <iostream> #include <cstdlib> using namespace std; int main() { char numberString[] = \"12.44b 0xy\"; char *end; double number; number = strtod(numberString,&end); cout << \"Number in String = \" << numberString << endl; cout << \"Number in Double = \" << number << endl; cout << \"End String = \" << end << endl; return 0; } "] },
+
+
+
+
+
+    { "input":"How to convert string to long integer", "output":["The strtol() function in C++ interprets the contents of a string as an integral number of the specified base and return its value as a long int. The strtol() function in C++ interprets the contents of a string as an integral number of the specified base and return its value as a long int. This function also sets a pointer to point to the first character after the last valid character of the string if there is any, otherwise the pointer is set to null. The strtol() function takes string, a pointer to character and an integer value - base as its parameter, interprets the content of string as an integral number of the given base and returns a long int value. This function is defined in <cstdlib> header file. Example:  #include <iostream> #include <cstdlib> using namespace std; int main() { int base = 10; char str[] = \"27ab_1x\"; char *end; long int num; num = strtol(str, &end, base); cout << \"Number in String = \" << str << endl; cout << \"Number in Long Int = \" << num << endl; cout << \"End String = \" << end << endl << endl; // the pointer to invalid characters can be null strcpy(str, \"27\"); cout << \"Number in String = \" << str << endl; num = strtol(str, &end, base); cout << \"Number in Long Int = \" << num << endl; if (*end) { cout << end; } else { cout << \"Null pointer\"; } return 0; } "] },
+
+
+
+
+    { "input":"How to convert string floating number to double", "output":["The atof() function in C++ interprets the contents of a string as a floating point number and return its value as a double. It is defined in <cstdlib> header file. Example: #include <iostream> #include <cstdlib> using namespace std; int main() { char numberString[] = \"-32.40\"; double numberInDouble; cout << \"Number in String = \" << numberString << endl; numberInDouble = atof(numberString); cout << \"Number in Double = \" << numberInDouble; return 0; } "] },
+
+
+    { "input":"", "output":"I do not comprehend" },
+
+
+    { "input":"How to allocate memory to pointer", "output":["The malloc() function in C++ allocates a block of uninitialized memory to a pointer. It is defined in the cstdlib header file. Example: #include <iostream> #include <cstdlib> using namespace std; int main() { // allocate memory of int size to an int pointer int* ptr = (int*) malloc(sizeof(int)); // assign the value 5 to allocated memory *ptr = 5; cout << *ptr; return 0; } "] },
+
+
+
+
+
+    { "input":"How to generate random numbers", "output":["The srand() function in C++ seeds the pseudo-random number generator used by the rand() function. It is defined in the cstdlib header file. Example: #include<iostream> #include<cstdlib> using namespace std; int main() { // set seed to 10 srand(10); // generate random number int random = rand(); cout << random; return 0; } "] },
+
+
+
+
+
+    { "input":"How to add a string to another string", "output":["The strcat() function in C++ appends a copy of a string to the end of another string. strcat() prototype char* strcat( char* dest, const char* src ); The strcat() function takes two arguments: dest and src. This function appends a copy of the character string pointed to by src to the end of string pointed to by dest. The null terminating character at the end of dest is replaced by the first character of src and the resulting character is also null terminated. The behaviour is undefined if - the strings overlap. - the dest array is not large enough to append the contents of src. It is defined in <cstring> header file. Example: #include <cstring> #include <iostream> using namespace std; int main() { char dest[50] = \"Learning C++ is fun\"; char src[50] = \" and easy\"; strcat(dest, src); cout << dest ; return 0; } "] }
+
+]
