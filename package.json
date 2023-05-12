@@ -1,0 +1,30 @@
+{
+  "name": "f-ide-backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "engines": {
+    "node": "16.14.0"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "brain.js": "^2.0.0-beta.17",
+    "brainjs": "^0.7.4",
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "express": "~4.16.1",
+    "express-session": "^1.17.3",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "mongoose": "^6.7.2",
+    "morgan": "~1.9.1",
+    "natural": "^6.3.0",
+    "request": "^2.88.2",
+    "require": "^2.4.20"
+  }
+}
